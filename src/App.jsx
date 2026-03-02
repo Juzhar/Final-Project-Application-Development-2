@@ -3,22 +3,25 @@ import Feed from "./pages/Feed";
 import Search from "./pages/Search";
 import RecipeDetail from "./pages/RecipeDetail";
 import Favorites from "./pages/Favorites";
-import NotFound from "./pages/NotFound";
-import Navbar from "./components/Navbar";
+import PageError from "./pages/404";
+import NavigationBar from "./components/NavigationBar";
 import { FavoritesProvider } from "./context/FavoritesContext";
+import './App.css';
 
 function App() {
   return (
     <FavoritesProvider>
       <BrowserRouter>
+      <div className="app-container">
         <Routes>
           <Route path="/" element={<Feed />} />
           <Route path="/search" element={<Search />} />
           <Route path="/recipe/:id" element={<RecipeDetail />} />
           <Route path="/favorites" element={<Favorites />} />
-          <Route path="*" element={<NotFound />} />
+          <Route path="*" element={<PageError />} />
         </Routes>
-        <Navbar />
+        <NavigationBar />
+      </div>
       </BrowserRouter>
     </FavoritesProvider>
   );
