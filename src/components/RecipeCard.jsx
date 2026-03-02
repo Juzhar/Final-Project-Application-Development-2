@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { useContext } from "react";
 import { FavoritesContext } from "../context/FavoritesContext";
+import './RecipeCard.css';
 
 function RecipeCard({ meal }) {
   const { addFavorite, removeFavorite, isFavorite } =

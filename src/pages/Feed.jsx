@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { getDefaultMeals } from "../services/api";
 import RecipeCard from "../components/RecipeCard";
-
+import './Feed.css';
 function Feed() {
   const [meals, setMeals] = useState([]);
   const [loading, setLoading] = useState(true);
