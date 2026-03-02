@@ -1,8 +1,8 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Feed from "./pages/Feed";
-import Search from "./pages/Search";
+import Search from "./pages/SearchPage";
 import RecipeDetail from "./pages/RecipeDetail";
-import Favorites from "./pages/Favorites";
+import Favorites from "./pages/FavoriteRecipes";
 import PageError from "./pages/404";
 import NavigationBar from "./components/NavigationBar";
 import { FavoritesProvider } from "./context/FavoritesContext";
