@@ -18,6 +18,7 @@ function App() {
     <FavoritesProvider>
       <BrowserRouter>
       <div className="app-container">
+         <NavigationBar />
         <Routes>
           <Route path="/" element={<Feed />} />
           <Route path="/search" element={<Search />} />
@@ -29,7 +30,7 @@ function App() {
           <Route path="/register" element={<Register />} />
           <Route path="*" element={<PageError />} />
         </Routes>
-        <NavigationBar />
+       
       </div>
       </BrowserRouter>
     </FavoritesProvider>
