@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Register.css";
-
+import { sanitizeInput } from "../utils/sanitize";
 function Register() {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
@@ -12,23 +12,26 @@ function Register() {
   const navigate = useNavigate();
 
   const handleSubmit = (e) => {
+    const sanitizedUsername = sanitizeInput(username);
+    const sanitizedPassword = sanitizeInput(password);
+
     e.preventDefault();
 
     setError("");
     setSuccess("");
 
-    if (!username.trim() || !password.trim()) {
+    if (!sanitizedUsername.trim() || !sanitizedPassword.trim()) {
       setError("Please fill out all fields");
       return;
     }
 
     const newUser = {
-      username,
-      password,
+      username: sanitizedUsername,
+      password: sanitizedPassword,
       role: selectedRole
     };
 
-    // store registered user
+    
     localStorage.setItem("registeredUser", JSON.stringify(newUser));
 
     setSuccess("Account created successfully! Redirecting to login...");
@@ -50,7 +53,7 @@ function Register() {
         {success && <div className="success-message">{success}</div>}
 
         <form onSubmit={handleSubmit}>
-
+          <input type="hidden" name="csrfToken" value="secureRandomToken" />
           <div className="form-group">
             <label htmlFor="username">Username</label>
 
