@@ -1,0 +1,40 @@
+.register-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+}
+
+.register-card {
+  background: white;
+  padding: 40px;
+  border-radius: 10px;
+  width: 350px;
+  box-shadow: 0px 4px 10px rgba(0,0,0,0.1);
+}
+
+.register-subtitle {
+  color: gray;
+  margin-bottom: 20px;
+}
+
+.register-button {
+  width: 100%;
+  padding: 10px;
+  background-color: #1e88e5;
+  color: white;
+  border: none;
+  cursor: pointer;
+}
+
+.register-button:hover {
+  background-color: #1565c0;
+}
+
+.success-message {
+  background: #d4edda;
+  color: #155724;
+  padding: 10px;
+  margin-bottom: 15px;
+  border-radius: 5px;
+}

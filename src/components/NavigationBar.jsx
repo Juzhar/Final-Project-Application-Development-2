@@ -1,13 +1,30 @@
 import { Link } from "react-router-dom";
-import './NavigationBar.css';
-function Navigationbar() {
+import { useAuth } from "../context/AuthContext";
+import "./NavigationBar.css";
+
+function NavigationBar() {
+  const { isAuthenticated, logout } = useAuth();
+
   return (
     <nav className="navbar">
-      <Link to="/">Feed</Link>
-      <Link to="/search">Search</Link>
-      <Link to="/favorites">Favorites</Link>
+      <h2>Cook Inn</h2>
+      <div className="nav-links">
+        <Link to="/">Home</Link>
+        <Link to="/search">Search</Link>
+
+        {isAuthenticated && <Link to="/favorites">Favorites</Link>}
+
+        {!isAuthenticated ? (
+          <>
+            <Link to="/login">Login</Link>
+            <Link to="/register">Register</Link>
+          </>
+        ) : (
+          <button onClick={logout}>Logout</button>
+        )}
+      </div>
     </nav>
   );
 }
 
-export default Navigationbar;
+export default NavigationBar;
