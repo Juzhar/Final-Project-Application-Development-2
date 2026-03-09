@@ -9,7 +9,7 @@
 }
 
 .recipe-card:hover {
-  transform: translateY(-3px);
+  transform: translateY(-4px);
 }
 
 .recipe-image {
@@ -31,4 +31,17 @@
   margin-top: 10px;
   display: flex;
   justify-content: space-between;
+}
+
+/* desktop improvements */
+@media (min-width: 900px) {
+
+  .recipe-image {
+    height: 220px;
+  }
+
+  .recipe-title {
+    font-size: 1.1rem;
+  }
+
 }
