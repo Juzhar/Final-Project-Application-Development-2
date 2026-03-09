@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { getMealById } from "../services/api";
+import "./RecipeDetail.css";
 
 function RecipeDetail() {
   const { id } = useParams();
