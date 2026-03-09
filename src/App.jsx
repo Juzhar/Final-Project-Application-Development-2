@@ -23,7 +23,7 @@ function App() {
           <Route path="/search" element={<Search />} />
           <Route path="/recipe/:id" element={<RecipeDetail />} />
           <Route path="/favorites" element={<ProtectedRoute>
-                            <FavoriteRecipes />
+                            <Favorites />
             </ProtectedRoute>} />
           <Route path="/login" element={<Login />} />
           <Route path="/register" element={<Register />} />

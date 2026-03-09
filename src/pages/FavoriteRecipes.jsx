@@ -5,7 +5,7 @@ import RecipeCard from "../components/RecipeCard";
 function Favorites() {
   const { favorites } = useContext(FavoritesContext);
 
-  if (favorites.length === 0) {
+  if (!favorites || favorites.length === 0) {
     return <p>No favorite recipes yet.</p>;
   }
 

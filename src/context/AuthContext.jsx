@@ -18,12 +18,16 @@ export function AuthProvider({ children }) {
   const isAuthenticated = user !== null;
 
   useEffect(() => {
+  try {
     const storedUser = JSON.parse(localStorage.getItem("recipefinder_user"));
 
     if (storedUser) {
       setUser(storedUser);
     }
-  }, []);
+  } catch {
+    localStorage.removeItem("recipefinder_user");
+  }
+}, []);
 
   const login = (username, password, role = "regular") => {
     if (!username || !password) {
