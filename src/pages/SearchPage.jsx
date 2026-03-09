@@ -2,6 +2,7 @@ import { useState } from "react";
 import { searchMeals } from "../services/api";
 import RecipeCard from "../components/RecipeCard";
 import { sanitizeInput } from "../utils/sanitize";
+import "./SearchPage.css";
 function Search() {
   const [query, setQuery] = useState("");
   const [meals, setMeals] = useState([]);
