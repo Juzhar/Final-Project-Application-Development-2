@@ -16,7 +16,6 @@ function Search() {
   return (
     <div>
       <form>
-      <input type="hidden" name="csrfToken" value="secureRandomToken" />
       <input
         type="text"
         placeholder="Search recipes..."
